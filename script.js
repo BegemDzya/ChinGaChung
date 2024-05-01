@@ -11,13 +11,13 @@ function random(min = 1, max = 3){
 }
 
 
-const mysql = require('mysql2')
-const prompt = require('prompt')
-const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	database: 'chingachung',
-	password: 'root1993'
+// const mysql = require('mysql2')
+// const prompt = require('prompt')
+// const connection = mysql.createConnection({
+// 	host: '',
+// 	user: '',
+// 	database: '',
+// 	password: ''
 })
 const winnerObj = {
 	"paperpaper": "draw",
@@ -50,15 +50,15 @@ function game(){
 		winner = winnerObj[gameResult]
 		console.log("Result:", winner)
 
-		const sql = `INSERT INTO gameresults ( player1_result, player2_result, winner_result) VALUES (?, ?, ? )`
-		const values = [ player1, player2, winner]
-		connection.query(sql, values, (err, result) => {
-			if (err) {
-				console.error('Error inserting data:', err)
-			} else {
-				console.log('Data inserted successfully!')
-			}
-		})
+		// const sql = `INSERT INTO gameresults ( player1_result, player2_result, winner_result) VALUES (?, ?, ? )`
+		// const values = [ player1, player2, winner]
+		// connection.query(sql, values, (err, result) => {
+		// 	if (err) {
+		// 		console.error('Error inserting data:', err)
+		// 	} else {
+		// 		console.log('Data inserted successfully!')
+		// 	}
+		// })
 		
 		if(winner === "draw"){game()}
 		if(!winner){game()}
@@ -69,7 +69,7 @@ game()
 
 
 
-// connection.execute('SELECT * FROM `gameresults`', function (err, results, fields) {
+// connection.execute('SELECT * FROM `table`', function (err, results, fields) {
 // console.log(results);
 // console.log(fields);
 // });
