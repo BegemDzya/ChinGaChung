@@ -11,14 +11,14 @@ function random(min = 1, max = 3){
 }
 
 
-// const mysql = require('mysql2')
-// const prompt = require('prompt')
+const mysql = require('mysql2')
+const prompt = require('prompt')
 // const connection = mysql.createConnection({
 // 	host: '',
 // 	user: '',
 // 	database: '',
 // 	password: ''
-})
+// })
 const winnerObj = {
 	"paperpaper": "draw",
    "stonestone": "draw",
